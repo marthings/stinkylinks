@@ -1,0 +1,21 @@
+<a href="/">{{ site.name }}</a>
+
+{% for page_in_nav in site.pages %}
+  {% if page_in_nav.depth == 1 and page_in_nav.listed? %}
+    <li class="{% if page.fullpath == page_in_nav.fullpath %}active{% endif %}">
+      {% link_to page_in_nav %}
+  {% endif %}
+{% endfor %}
+
+{% if current_account %}
+  <li class="my-account"  >
+    <a href="{% path_to account %}">My account</a>
+  </li>
+{% else %}
+  <li class="sign-up">
+    <a href="{% path_to sign_up %}">Sign up</a>
+  </li>
+  <li class="sign-in">
+    <a href="{% path_to sign_in %}">Sign in</a>
+  </li>
+{% endif %}

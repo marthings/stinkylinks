@@ -1,0 +1,62 @@
+---
+title: My account
+published: true
+handle: account
+listed: false
+position: 3
+---
+{% extends 'layouts/default' %}
+
+{% block content %}
+
+  {% authorize "accounts", "sign_in" %}
+
+    <h2 class="page-title">My account</h2>
+    
+    {% if current_account %}
+
+    <ul class="list-group">
+      <li class="list-group-item">{{ current_account.name }}</li>
+      <li class="list-group-item">{{ current_account._id }}</li>
+      <li class="list-group-item">{{ current_account.email }}</li>
+      <li class="list-group-item">
+        <form action="{% path_to 'sign_in' %}" method="POST">
+          <input type="hidden" name="auth_action" value="sign_out" />
+          <input type="hidden" name="auth_content_type" value="accounts" />
+          <input type="submit" value="Sign out" class="btn btn-default btn-xs"/>
+        </form>
+      </li>
+    </ul>
+
+    Links
+    {% with_scope account: current_account %}
+
+      {% for link in contents.links %}
+
+        <div class="stinky-link">
+          <a target="_blank" href="{{ link.url }}">{{ link.title }}</a>
+          <div class="stinky-stinks">{{ link.stinks }}</div>
+        </div>
+
+      {% endfor %}
+
+    {% endwith_scope %}
+
+    <form action="{% path_to 'createlink' %}" method="POST">
+      <input type="hidden" name="name" value="{{ current_account.name | downcase }}" />
+      <input type="text" placeholder="Title" class="uk-input" name="title" value="" />
+      <input type="text" placeholder="url" class="uk-input" name="url" value="" />
+      <input type="submit" value="Create new link" class="uk-button uk-button-primary"/>
+    </form>
+
+    {% else %}
+
+      <div class="alert alert-warning">
+
+        You need to <a href="{% path_to 'sign_in' %}">sign in</a>.
+        
+      </div>
+
+    {% endif %}
+
+{% endblock %}

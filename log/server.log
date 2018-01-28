@@ -1,0 +1,16 @@
+# Logfile created on 2018-01-26 15:52:41 +0100 by logger.rb/56438
+I, [2018-01-26T15:52:41.646567 #57076]  INFO -- : Thin web server (v1.7.2 codename Bachmanity)
+I, [2018-01-26T15:52:41.646703 #57076]  INFO -- : Maximum connections set to 1024
+I, [2018-01-26T15:52:41.646735 #57076]  INFO -- : Listening on 0.0.0.0:3333, CTRL+C to stop
+I, [2018-01-26T15:56:01.497206 #57454]  INFO -- : Thin web server (v1.7.2 codename Bachmanity)
+I, [2018-01-26T15:56:01.497359 #57454]  INFO -- : Maximum connections set to 1024
+I, [2018-01-26T15:56:01.497400 #57454]  INFO -- : Listening on 0.0.0.0:3333, CTRL+C to stop
+I, [2018-01-26T16:53:50.787337 #58467]  INFO -- : Thin web server (v1.7.2 codename Bachmanity)
+I, [2018-01-26T16:53:50.787499 #58467]  INFO -- : Maximum connections set to 1024
+I, [2018-01-26T16:53:50.787536 #58467]  INFO -- : Listening on 0.0.0.0:3333, CTRL+C to stop
+I, [2018-01-26T17:05:02.346139 #58723]  INFO -- : Thin web server (v1.7.2 codename Bachmanity)
+I, [2018-01-26T17:05:02.346281 #58723]  INFO -- : Maximum connections set to 1024
+I, [2018-01-26T17:05:02.346319 #58723]  INFO -- : Listening on 0.0.0.0:3333, CTRL+C to stop
+I, [2018-01-28T11:45:49.090412 #61486]  INFO -- : Thin web server (v1.7.2 codename Bachmanity)
+I, [2018-01-28T11:45:49.090939 #61486]  INFO -- : Maximum connections set to 1024
+I, [2018-01-28T11:45:49.090993 #61486]  INFO -- : Listening on 0.0.0.0:3333, CTRL+C to stop

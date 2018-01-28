@@ -1,0 +1,31 @@
+---
+title: Home page
+published: true
+handle: index
+---
+{% extends 'layouts/default' %}
+
+{% block content %}
+  <h1>{{ page.title }}</h1>
+  <p>Lorem ipsum....</p>
+
+  {% for link in contents.links %}
+
+    <div class="stinky-link">
+        
+      <a target="_blank" href="http://{{ link.url | remove:'http://' | split:'/' | first }}">{{ link.title }}</a>
+      <p>{{ link.account.name }}</p>
+
+    </div>
+
+    {{ link.stinks }}
+    
+    <form action="{% path_to 'upvotelink' %}" method="POST">
+      <input type="hidden" name="slug" value="{{ link._slug }}" />
+      <input type="hidden" name="stinks" value="{{ link.stinks }}" />
+      <input type="submit" value="Upvote" class="uk-button uk-button-primary"/>
+    </form>
+
+  {% endfor %}
+
+{% endblock %}

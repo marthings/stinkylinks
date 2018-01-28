@@ -1,0 +1,18 @@
+---
+title: Upvote link
+published: true
+handle: upvotelink
+position: 3
+---
+{% capture link_slug %}{{ params.slug }}{% endcapture %}
+{% action "upvotelink" %}
+
+  setProp("link", "{{link_slug}}");
+  var params = getProp('params');
+  var link = getProp('link');
+  var i = params.stinks;
+  var upvotes = ++i;
+  update_link = updateEntry('links', link, { stinks: upvotes });
+  redirectTo('index');
+
+{% endaction %}

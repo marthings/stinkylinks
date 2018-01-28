@@ -1,0 +1,28 @@
+---
+title: Default layout
+is_layout: false
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{{ site.name }}</title>
+    <link rel="shortcut icon" href="{{ 'favicon.png' | theme_image_url }}">
+
+    {% seo %}
+
+  </head>
+  <body>
+
+    {% include 'nav' %}
+
+    {% block content, short_name: true %}
+    
+    {% endblock %}
+
+    {{ 'application.js' | javascript_tag }}
+  </body>
+</html>

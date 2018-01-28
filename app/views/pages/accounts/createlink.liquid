@@ -1,0 +1,13 @@
+---
+title: Create link
+published: true
+handle: createlink
+position: 3
+---
+<h1>{{ page.title }}</h1>
+
+{% action "create link" %}
+  var params = getProp('params');
+  var link = createEntry('links', { title: params.title, url: params.url, account_id: params.name });
+  redirectTo('account');
+{% endaction %}

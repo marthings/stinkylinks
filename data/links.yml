@@ -1,0 +1,24 @@
+- "Google":
+    description: "Commodi voluptates eum non. Tempore qui in ullam. Qui aut aperiam unde. Omnis repudiandae est qui illum praesentium. Fugit ea sit aut voluptas minus."
+    url: "http://google.se"
+    stinks: 1
+    account: john
+
+- "Aftonbladet":
+    description: "Quo possimus earum. Impedit consequatur molestiae commodi autem animi nam distinctio. Et magnam aut velit rerum facilis. Perspiciatis non earum."
+    url: "http://aftonbladet.se"
+    stinks: 2
+    account: john
+
+- "9gag":
+    description: "Quia doloremque voluptas commodi. Consectetur velit totam quae voluptates. Ullam omnis voluptatibus facilis itaque et est. Est autem voluptate aliquid aut. Ut ipsa reprehenderit."
+    url: "http://9gag.com"
+    stinks: 3
+    account: john
+
+- "Flashback":
+    description: "Et est voluptas. Iure dolor aperiam iste. Sunt et natus omnis facilis vero. In saepe enim labore doloremque exercitationem voluptatem. Vitae rerum sapiente omnis commodi iusto."
+    url: "http://flashback.se"
+    stinks: 1
+    account: john
+
