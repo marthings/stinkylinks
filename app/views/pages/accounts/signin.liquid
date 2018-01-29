@@ -15,12 +15,12 @@ position: 2
     
     {% if auth_wrong_credentials %}Wrong credentials!{% endif %}
     
-    <label for="auth-email">Your E-mail</label>
-    <input type="email" class="form-control" id="auth-email" placeholder="Email" name="auth_id" value="{{ params.auth_id }}">
+    <label class="s-label" for="auth-email">Your E-mail</label>
+    <input type="email" class="s-input" id="auth-email" placeholder="Email" name="auth_id" value="{{ params.auth_id }}">
     
-    <label for="auth-password">Password</label>
-    <input type="password" class="form-control" id="auth-password" placeholder="Password" name="auth_password" value="">
+    <label class="s-label" for="auth-password">Password</label>
+    <input type="password" class="s-input" id="auth-password" placeholder="Password" name="auth_password" value="">
             
-    <button type="submit">Sign in</button>
+    <button class="s-button" type="submit">Sign in</button>
   </form>
 {% endblock %}

@@ -1,0 +1,91 @@
+:root {
+  --spacing: 20px;
+  --stink-dark: rgb(30, 30, 34);
+  --stink-text: #fff;
+
+  --stinky-link: rgb(235, 208, 208);
+
+  --stink-primary: rgb(79, 206, 146);
+  --stink-primary-text: rgb(0, 0, 0);
+  --stink-secondary: rgb(56, 53, 59);
+  --stink-secondary-text: #fff;
+
+  --form-padding: 10px 16px;
+}
+
+body { 
+  font-family: Courier New, Courier, monospace;
+  background: var(--stink-dark);
+  color: var(--stink-text);
+}
+
+h1,h2 {
+  margin: 0 0 var(--spacing) 0;
+  font-weight: normal;
+}
+
+a {
+  text-decoration: none;
+  color: var(--stinky-link);
+}
+
+.s-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.s-nav {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--spacing) 0;
+}
+
+.stinky-card {
+  margin: 0 0 var(--spacing) 0;
+}
+
+.stinky-link {
+  font-size: 2rem;
+}
+
+.stinky-intro {
+  margin: 120px 0 60px 0;
+}
+
+.stinky-title {
+  font-size: 3rem;
+}
+
+.stinky-lead {
+  font-size: 1.2rem;
+}
+
+.stinky-votes {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.s-link {
+  color: var(--stinky-link);
+}
+
+.s-button {
+  border: 0;
+  background: var(--stink-primary);
+  color: var(--stink-primary-text);
+  padding: var(--form-padding);
+
+  cursor: pointer;
+  position: relative;
+  &:active {
+    top: 1px;
+  }
+}
+
+.s-input {
+  border: 0;
+  background: var(--stink-secondary);
+  color: var(--stink-secondary-text);
+  padding: var(--form-padding);
+}

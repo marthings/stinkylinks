@@ -10,6 +10,8 @@ is_layout: false
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>{{ site.name }}</title>
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.9.1/css/tachyons.min.css"/>
+    {{ 'styles.css' | stylesheet_tag }}
     <link rel="shortcut icon" href="{{ 'favicon.png' | theme_image_url }}">
 
     {% seo %}
@@ -17,11 +19,15 @@ is_layout: false
   </head>
   <body>
 
-    {% include 'nav' %}
-
-    {% block content, short_name: true %}
+    <div class="s-container">
     
-    {% endblock %}
+      {% include 'nav' %}
+
+      {% block content, short_name: true %}
+      
+      {% endblock %}
+
+    </div>
 
     {{ 'application.js' | javascript_tag }}
   </body>

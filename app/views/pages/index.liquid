@@ -6,25 +6,32 @@ handle: index
 {% extends 'layouts/default' %}
 
 {% block content %}
-  <h1>{{ page.title }}</h1>
-  <p>Lorem ipsum....</p>
+
+  <div class="stinky-intro">
+    <h1 class="stinky-title">Stinkylinks!</h1>
+    <p class="stinky-lead">The best links when you are visiting the poo house</p>
+  </div>
 
   {% for link in contents.links %}
 
-    <div class="stinky-link">
+    <div class="stinky-card">
         
-      <a target="_blank" href="http://{{ link.url | remove:'http://' | split:'/' | first }}">{{ link.title }}</a>
+      <a class="stinky-link" target="_blank" href="http://{{ link.url | remove:'http://' | split:'/' | first }}">{{ link.title }}</a>
       <p>{{ link.account.name }}</p>
+      
+      <div class="stinky-votes">
+
+        {{ link.stinks }}
+      
+        <form action="{% path_to 'upvotelink' %}" method="POST">
+          <input type="hidden" name="slug" value="{{ link._slug }}" />
+          <input type="hidden" name="stinks" value="{{ link.stinks }}" />
+          <input type="submit" value="Daym stinky!" class="s-button"/>
+        </form>
+
+      </div>
 
     </div>
-
-    {{ link.stinks }}
-    
-    <form action="{% path_to 'upvotelink' %}" method="POST">
-      <input type="hidden" name="slug" value="{{ link._slug }}" />
-      <input type="hidden" name="stinks" value="{{ link.stinks }}" />
-      <input type="submit" value="Upvote" class="uk-button uk-button-primary"/>
-    </form>
 
   {% endfor %}
 

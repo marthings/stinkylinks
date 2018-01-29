@@ -22,31 +22,31 @@ position: 1
         We're sorry, we couldn't create your account.
       {% endif %}
 
-      <label for="auth-name">Your name</label>
-      <input type="text" name="auth_entry[name]" id="auth-name" value="{{ auth_entry.name }}">
+      <label class="s-label" for="auth-name">Your name</label>
+      <input class="s-input" type="text" name="auth_entry[name]" id="auth-name" value="{{ auth_entry.name }}">
       {% if auth_entry.errors.name.size > 0 %}
         {{ auth_entry.errors.name.first }}
       {% endif %}
 
-      <label for="auth-email">Your E-mail</label>
-      <input type="email" name="auth_entry[email]"  id="auth-email" value="{{ auth_entry.email }}">
+      <label class="s-label" for="auth-email">Your E-mail</label>
+      <input class="s-input" type="email" name="auth_entry[email]"  id="auth-email" value="{{ auth_entry.email }}">
       {% if auth_entry.errors.email.size > 0 %}
         {{ auth_entry.errors.email.first }}
       {% endif %}
 
-      <label for="auth-password">Password</label>
-      <input type="password" name="auth_entry[password]" id="auth-password">
+      <label class="s-label" for="auth-password">Password</label>
+      <input class="s-input" type="password" name="auth_entry[password]" id="auth-password">
       {% if auth_entry.errors.password.size > 0 %}
         {{ auth_entry.errors.password.first }}
       {% endif %}
 
-      <label for="auth-password">Password confirmation</label>
-      <input type="password" name="auth_entry[password_confirmation]" id="auth-password">
+      <label class="s-label" for="auth-password">Password confirmation</label>
+      <input class="s-input" type="password" name="auth_entry[password_confirmation]" id="auth-password">
       {% if auth_entry.errors.password_confirmation.size > 0 %}
         {{ auth_entry.errors.password_confirmation.first }}
       {% endif %}
       
-      <button type="submit">Sign up</button>
+      <button class="s-button" type="submit">Sign up</button>
     </form>
   {% endif %}
 

@@ -1,21 +1,26 @@
-<a href="/">{{ site.name }}</a>
+<section role="banner" class="s-nav">
+  <a href="/">{{ site.name }}</a>
+  <nav role="navigation" class="s-nav-menu">
+  
+  {% for page_in_nav in site.pages %}
+    {% if page_in_nav.depth == 1 and page_in_nav.listed? %}
+      <li class="{% if page.fullpath == page_in_nav.fullpath %}active{% endif %}">
+        {% link_to page_in_nav %}
+    {% endif %}
+  {% endfor %}
 
-{% for page_in_nav in site.pages %}
-  {% if page_in_nav.depth == 1 and page_in_nav.listed? %}
-    <li class="{% if page.fullpath == page_in_nav.fullpath %}active{% endif %}">
-      {% link_to page_in_nav %}
+  {% if current_account %}
+    <div class="my-account">
+      <a href="{% path_to account %}">{{ current_account.name }}</a>
+    </div>
+  {% else %}
+    <div class="sign-up">
+      <a href="{% path_to sign_up %}">Sign up</a>
+    </div>
+    <div class="sign-in">
+      <a href="{% path_to sign_in %}">Sign in</a>
+    </div>
   {% endif %}
-{% endfor %}
 
-{% if current_account %}
-  <li class="my-account"  >
-    <a href="{% path_to account %}">My account</a>
-  </li>
-{% else %}
-  <li class="sign-up">
-    <a href="{% path_to sign_up %}">Sign up</a>
-  </li>
-  <li class="sign-in">
-    <a href="{% path_to sign_in %}">Sign in</a>
-  </li>
-{% endif %}
+  </nav>
+</section>

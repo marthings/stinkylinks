@@ -14,40 +14,43 @@ position: 3
     <h2 class="page-title">My account</h2>
     
     {% if current_account %}
+    <h1>{{ current_account.name }}</h1>
+    {{ current_account.email }}
+    <form action="{% path_to 'sign_in' %}" method="POST">
+      <input type="hidden" name="auth_action" value="sign_out" />
+      <input type="hidden" name="auth_content_type" value="accounts" />
+      <input type="submit" value="Sign out" class="s-button"/>
+    </form>
 
-    <ul class="list-group">
-      <li class="list-group-item">{{ current_account.name }}</li>
-      <li class="list-group-item">{{ current_account._id }}</li>
-      <li class="list-group-item">{{ current_account.email }}</li>
-      <li class="list-group-item">
-        <form action="{% path_to 'sign_in' %}" method="POST">
-          <input type="hidden" name="auth_action" value="sign_out" />
-          <input type="hidden" name="auth_content_type" value="accounts" />
-          <input type="submit" value="Sign out" class="btn btn-default btn-xs"/>
-        </form>
-      </li>
-    </ul>
+    <h2>Create</h2>
+    <form action="{% path_to 'createlink' %}" method="POST">
+      <input type="hidden" name="name" value="{{ current_account.name | downcase }}" />
+      <input type="text" placeholder="Title" class="s-input" name="title" value="" />
+      <input type="text" placeholder="url" class="s-input" name="url" value="" />
+      <input type="submit" value="Create new link" class="s-button"/>
+    </form>
 
-    Links
+    <h2>Your links</h2>
     {% with_scope account: current_account %}
 
       {% for link in contents.links %}
 
-        <div class="stinky-link">
-          <a target="_blank" href="{{ link.url }}">{{ link.title }}</a>
-          <div class="stinky-stinks">{{ link.stinks }}</div>
+        <div class="stinky-card">
+        
+          <a class="stinky-link" target="_blank" href="http://{{ link.url | remove:'http://' | split:'/' | first }}">{{ link.title }}</a>
+          <p>{{ link.account.name }}</p>
+          
+          <div class="stinky-votes">
+
+            {{ link.stinks }}
+          
+          </div>
+
         </div>
 
       {% endfor %}
 
     {% endwith_scope %}
-
-    <form action="{% path_to 'createlink' %}" method="POST">
-      <input type="hidden" name="name" value="{{ current_account.name | downcase }}" />
-      <input type="text" placeholder="Title" class="uk-input" name="title" value="" />
-      <input type="text" placeholder="url" class="uk-input" name="url" value="" />
-      <input type="submit" value="Create new link" class="uk-button uk-button-primary"/>
-    </form>
 
     {% else %}
 
