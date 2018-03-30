@@ -1,7 +1,7 @@
 - "Google":
     description: "Commodi voluptates eum non. Tempore qui in ullam. Qui aut aperiam unde. Omnis repudiandae est qui illum praesentium. Fugit ea sit aut voluptas minus."
     url: "http://google.se"
-    stinks: 1
+    stinks: 2
     account: john
 
 - "Aftonbladet":
@@ -19,6 +19,6 @@
 - "Flashback":
     description: "Et est voluptas. Iure dolor aperiam iste. Sunt et natus omnis facilis vero. In saepe enim labore doloremque exercitationem voluptatem. Vitae rerum sapiente omnis commodi iusto."
     url: "http://flashback.se"
-    stinks: 1
+    stinks: 4
     account: john
 

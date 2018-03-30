@@ -13,14 +13,14 @@ is_layout: false
     <link rel="stylesheet" href="https://unpkg.com/tachyons@4.9.1/css/tachyons.min.css"/>
     {{ 'styles.css' | stylesheet_tag }}
     <link rel="shortcut icon" href="{{ 'favicon.png' | theme_image_url }}">
-
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     {% seo %}
 
   </head>
   <body>
 
     <div class="s-container">
-    
+
       {% include 'nav' %}
 
       {% block content, short_name: true %}

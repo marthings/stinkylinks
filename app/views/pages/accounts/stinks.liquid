@@ -1,0 +1,27 @@
+---
+title: Stinks
+listed: true
+published: true
+handle: stinks
+slug: stinks
+display_settings:
+  hidden: true
+response_type: application/json
+---
+{% action "upvote" %}
+
+  var content_type = getProp('params').content_type;
+  var object = findEntry(content_type, getProp('params').object_id);
+  var name = object._id;
+  var stinks = object.stinks;
+  
+  var i = stinks;
+  var upvotes = ++i;
+  
+  update_link = updateEntry(content_type, name, { stinks: upvotes });
+
+  setProp('liked', upvotes);
+{% endaction %}
+{ 
+  {% include 'json', key: 'stinks', value: liked %}
+}

@@ -19,15 +19,9 @@ handle: index
       <a class="stinky-link" target="_blank" href="http://{{ link.url | remove:'http://' | split:'/' | first }}">{{ link.title }}</a>
       <p>{{ link.account.name }}</p>
       
-      <div class="stinky-votes">
+      <div class="stinky-votes" data-url="{{ base_url }}{% path_to 'stinks' %}?object_id={{ link._id }}&content_type=links">
 
-        {{ link.stinks }}
-      
-        <form action="{% path_to 'upvotelink' %}" method="POST">
-          <input type="hidden" name="slug" value="{{ link._slug }}" />
-          <input type="hidden" name="stinks" value="{{ link.stinks }}" />
-          <input type="submit" value="Daym stinky!" class="s-button"/>
-        </form>
+        <span class="stinks">{{ link.stinks }}</span> Daym stinky!
 
       </div>
 
